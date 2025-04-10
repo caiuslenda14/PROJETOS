@@ -1,261 +1,491 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
+body {
+    font-family: arial;
+    color: #000c2f;
 
-@media screen and (min-width:1000px) {
+    /* ANIMAÇÃO FUNDO */
+    animation: fundoSuave 6s infinite ease-in-out;
+    background: linear-gradient(230deg, #4e00d3, #170062, #000c2f);
+    background-size: 300% 300%;
+    background-position: 0% 50%;
 
-    body {
-        background: linear-gradient(to top, rgb(74, 5, 159), rgb(30, 2, 57));
-        height: 100%;
+    height: 100vh;
+
+    a {
+        color: inherit;
+        text-decoration-line: none;
     }
+    text-align: center;
+    @media screen and (min-width:1023px) {
 
-    h2 {
-        padding-bottom: 15px;
-    }
-
-    .perf {
-        text-align: center;
-        border-radius: 20px;
-        background-color: rgb(30, 2, 57);
-        padding: 25px;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-    }
-
-    .r {
-        h1 {
-            color: rgb(128, 40, 210);
+        h3 {
+            margin-top: 30px;
+            position: absolute;
+            color: rgba(255, 255, 255, 0.217);
+            left: 50%;
+            transform: translateX(-50%);
         }
+
+        hr {
+            margin: 20px;
+            border-color: #000616;
+        }
+
+        .container {
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 10px;
+            width: 100vh;
+            background-color: aliceblue;
+            padding: 10px;
+            justify-self: center;
+        }
+
+        .sobreMim {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            h1 {
+                font-size: 50px;
+            }
+
+            img:hover {
+                transition: 0.1s;
+                transform: scale(1.05);
+                overflow: hidden;
+            }
+
+            .sobreTexto {
+                text-align: left;
+
+                span {
+                    animation: blink 1s infinite steps(2);
+                }
+
+                p {
+                    margin-top: 35px;
+                }
+
+                h1:hover {
+                    transition: 1s;
+                    color: #4e00d3;
+                }
+            }
+
+            .botoesSobreMim {
+                margin: 0 0 0 0;
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                gap: 5px;
+
+                p {
+                    border-radius: 10px;
+                    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.25);
+                    text-align: center;
+                    color: #000c2f;
+                    padding: 10px;
+                    background-color: aliceblue;
+                }
+
+                p:hover {
+                    transition: 0.2s;
+                    border-radius: 15px;
+                    transform: scale(1.5);
+                }
+            }
+
+            .git:hover {
+                color: white;
+                background-color: black;
+            }
+
+            .insta:hover {
+                color: white;
+                background: radial-gradient(circle at 30% 107%,
+                        #fdf497 0%,
+                        #fdf497 5%,
+                        #fd5949 45%,
+                        #d6249f 60%,
+                        #285AEB 90%);
+            }
+
+            .link:hover {
+                color: #0077B5;
+                background-color: white;
+            }
+
+            .spot:hover {
+                color: #1DB954;
+                background-color: black;
+            }
+        }
+
+        /* DESVANECER DE IMAGEM */
+        .imagem {
+            width: auto;
+            width: 300px;
+            height: auto;
+            mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
+            -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
+        }
+
+        /* ANIMAÇÃO PARA FUNDO SUAVE */
+        @keyframes fundoSuave {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* ANIMAçÂO BARRA DIGITANDO */
+        @keyframes blink {
+            0% {
+                display: none;
+            }
+
+            100% {
+                display: show;
+            }
+        }
+
+        .divProjetos {
+            margin: 10px;
+            padding: 50px;
+            outline-offset: 0px;
+
+            h1 {
+                margin-bottom: 10px;
+                font-size: 50px;
+            }
+
+            h1:hover {
+                transition: 0.5s;
+                color: #4e00d3;
+            }
+
+            hr {
+                margin: 20px;
+                color: #000c2f;
+            }
+
+            transition: all 0.3s ease-in-out;
+
+            h2 {
+                font-size: 20px;
+                color: rgba(255, 255, 255, 0.824);
+                padding: 10px;
+                text-align: justify;
+                font-size: 15px;
+            }
+
+            p {
+                bottom: 0;
+                color: rgba(255, 255, 255, 0.537);
+            }
+        }
+
+        .outline {
+            margin: 10px;
+            border-radius: 15px;
+            outline: #000c2f 2px solid;
+        }
+
+        /* PROJETO */
+        .projeto {
+            transition: 0.3s;
+            border-radius: 15px;
+            display: grid;
+            grid-template-columns: 50% 50%;
+            padding: 20px;
+
+            /* FUNDO */
+            animation: fundoSuave 6s infinite ease-in-out;
+            background: linear-gradient(230deg, #4e00d3, #170062, #000c2f);
+            background-size: 300% 300%;
+            background-position: 0% 50%;
+
+            img {
+                border-radius: 15px;
+                width: 100%;
+            }
+
+            h1,
+            h1:hover {
+                font-size: 20px;
+                color: white;
+            }
+
+            .textoDiv {
+                text-align: center;
+            }
+
+        }
+
+        .projeto:hover {
+            outline: white 3px solid;
+            transition: 1s;
+            transform: scale(1.5);
+        }
+
+        #toggleProjetos {
+            border-radius: 15px;
+            padding: 10px;
+            width: 100%;
+            transition: 0.5s;
+            font-weight: 700;
+            color: #000c2f;
+            cursor: pointer;
+            box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.25);
+            background-color: aliceblue;
+            border: none;
+            outline: none;
+            font-size: 40px;
+        }
+
+        #toggleProjetos:hover {
+            transition: 0.5s;
+            animation: fundoSuave 6s infinite ease-in-out;
+            background: linear-gradient(230deg, #4e00d3, #170062, #000c2f);
+            background-size: 300% 300%;
+            background-position: 0% 50%;
+            color: #ffffff;
+        }
+    }
+}
+@media screen and (max-width: 1023px) {
+    body {
+        height: 100vh;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+        background-color: #f4f4f4;
+    }
+
+    h3 {
+        margin: 30px auto;
+        color: rgba(0, 0, 0, 0.4);
+        font-size: 14px;
+    }
+
+    hr {
+        margin: 20px;
+        border-color: #000616;
     }
 
     .container {
-        border-radius: 20px;
-        margin: 5% 10%;
-        background-color: white;
-        padding: 100px;
-
-        h1 {
-            margin: 20px 0 20px 0;
-            font-size: 300%;
-            font-family: arial;
-        }
-
-        h2 {
-            margin-top: 10px;
-            font-weight: 400;
-            font-family: arial;
-        }
-    }
-
-    .sone {
-        padding-top: 20px;
-
-        div {
-            border-radius: 20px;
-            margin-top: 15px;
-            background-color: rgb(30, 2, 57);
-        }
-
-        p {
-            color: rgb(215, 172, 255);
-        }
-    }
-
-    #img {
-        padding: 20px;
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-
-        img {
-            border: solid white 2px;
-            border-radius: 20px;
-            width: 600px;
-        }
-
-        p {
-            padding: 25px;
-            font-family: arial;
-            font-size: 35px;
-        }
-
-        span {
-            font-size: 15px;
-
-        }
-    }
-
-    p {
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        text-align: center;
-        color: white;
+        width: 90%;
+        margin: 0 auto;
+        background-color: aliceblue;
+        border-radius: 15px;
         padding: 15px;
     }
 
-    a {
-        text-decoration-line: inherit;
-    }
-
-    hr {
-        margin: 50px 0 0 0;
-    }
-    
-    .sobrepc{
-        text-align: center;
-        border-radius: 15px;
-        background-color: rgb(30, 2, 57);
-        h1{
-            color: rgb(255, 255, 255);
-            padding:10px;
-        }
-        h3{
-            margin: 0 10% 10px 10%;
-            padding: 1px 10px 35px 10px;
-            font-family: arial;
-            font-size: 25px;
-            color: rgb(255, 255, 255);
-        }
-        img{
-            margin-top: 25px;
-            border: white solid;
-            padding: 10px;
-            border-radius: 100%;
-            width: 20%;
-        }
+    .sobreMim {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
         
-    }
-    .sobredv{
-        display: none;
-    }
-
-}
-
-
-
-@media screen and (max-width:1000px) {
-
-    body {
-        background: linear-gradient(to top, rgb(74, 5, 159), rgb(30, 2, 57));
-        height: 100%;
-    }
-
-    h2 {
-        padding-bottom: 15px;
-    }
-    h3{
-        font-family: arial;
-    }
-    .perf {
-        h1 {
-            margin: 20px;
-            text-align: center;
-            border-radius: 20px;
-            background-color: rgb(30, 2, 57);
-            padding: 20px;
+        img{
+            width: 50%;
         }
     }
 
-    .r {
-        h1 {
-            color: rgb(128, 40, 210);
-        }
-    }
-
-    .container {
-        border-radius: 20px;
-        margin: 20px;
-        background-color: white;
-        padding: 30px;
-
-        h1 {
-            font-size: ;
-            font-family: arial;
-        }
-
-        h2 {
-            margin-top: 20px;
-            font-weight: 400;
-            font-family: arial;
-        }
-    }
-
-    .sone {
-        padding-top: 20px;
-
-        div {
-            border-radius: 20px;
-            margin-top: 20px;
-            background-color: rgb(30, 2, 57);
-        }
-
-        p {
-            color: rgb(215, 172, 255);
-        }
-    }
-
-    #img {
-        padding: 20px;
-        display: grid;
-        grid-template-rows: 1fr ;
-
-        img {
-            border: solid white 2px;
-            border-radius: 20px;
-            width: 100%;
-        }
-
-        p {
-            font-size: auto;
-            padding: 25px;
-            font-family: arial;
-        }
-
-        span {
-            font-size: ;
-
-        }
-    }
-
-    p {
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    .sobreTexto {
+        width: 100%;
         text-align: center;
+    }
+
+    .sobreTexto span {
+        animation: blink 1s infinite steps(2);
+    }
+
+    .sobreTexto h1 {
+        font-size: 28px;
+    }
+
+    .sobreTexto h2 {
+        font-size: 16px;
+        color: #444;
+    }
+
+    .sobreTexto h1:hover {
+        transition: 0.5s;
+        color: #4e00d3;
+    }
+
+    .sobreTexto p {
+        margin: 10px 0;
+    }
+
+    .imagem {
+        width: 200px;
+        height: auto;
+        mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
+        -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
+    }
+
+    .botoesSobreMim {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .botoesSobreMim p {
+        padding: 10px;
+        border-radius: 10px;
+        background-color: aliceblue;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+        color: #000c2f;
+        font-size: 20px;
+    }
+
+    .botoesSobreMim p:hover {
+        transform: scale(1.2);
+        transition: 0.2s;
+    }
+
+    .git:hover {
+        background-color: black;
         color: white;
     }
 
-    a {
-        text-decoration-line: inherit;
+    .insta:hover {
+        color: white;
+        background: radial-gradient(circle at 30% 107%,
+                #fdf497 0%,
+                #fdf497 5%,
+                #fd5949 45%,
+                #d6249f 60%,
+                #285AEB 90%);
     }
 
-    hr {
-        color: rgb(30, 2, 57);
-        margin: 30px 0 0 0;
+    .link:hover {
+        background-color: white;
+        color: #0077B5;
     }
-    .sobredv{
-        text-align: center;
+
+    .spot:hover {
+        background-color: black;
+        color: #1DB954;
+    }
+
+    .outline {
+        border: 2px solid #000c2f;
         border-radius: 15px;
-        background-color: rgb(30, 2, 57);
-        h1{
-            color: rgb(255, 255, 255);
-            padding:10px;
-        }
-        h3{
-            margin: 0 10% 10px 10%;
-            padding: ;
-            font-family: arial;
-            font-size: 20px;
-            color: rgb(255, 255, 255);
-        }
-        img{
-            margin-top: 25px;
-            border: white solid;
-            padding: 10px;
-            border-radius: 100%;
-            width: 50%;
-        }
-        
+        padding: 10px;
+        margin: 10px 0;
     }
-    .sobrepc{
-        display: none;
+
+    #toggleProjetos {
+        width: 100%;
+        font-size: 24px;
+        padding: 15px;
+        border-radius: 15px;
+        background-color: aliceblue;
+        color: #000c2f;
+        border: none;
+        cursor: pointer;
+        font-weight: bold;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    }
+
+    #toggleProjetos:hover {
+        background: linear-gradient(230deg, #4e00d3, #170062, #000c2f);
+        background-size: 300% 300%;
+        background-position: 0% 50%;
+        color: white;
+        animation: fundoSuave 6s infinite ease-in-out;
+    }
+
+    .divProjetos {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+    .projeto {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: linear-gradient(230deg, #4e00d3, #170062, #000c2f);
+        background-size: 300% 300%;
+        background-position: 0% 50%;
+        animation: fundoSuave 6s infinite ease-in-out;
+        border-radius: 15px;
+        padding: 15px;
+        transition: 0.3s;
+    }
+
+    .projeto img {
+        width: 100%;
+        max-width: 300px;
+        border-radius: 10px;
+    }
+
+    .projeto:hover {
+        outline: white 3px solid;
+        transform: scale(1.03);
+        transition: 0.5s;
+    }
+
+    .textoDiv {
+        text-align: center;
+        color: white;
+        margin-top: 10px;
+    }
+
+    .textoDiv h1 {
+        font-size: 20px;
+    }
+
+    .textoDiv h2 {
+        font-size: 14px;
+        text-align: justify;
+        margin: 10px 0;
+        color: rgba(255, 255, 255, 0.9);
+    }
+
+    .textoDiv p {
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.6);
+    }
+
+    @keyframes fundoSuave {
+        0% {
+            background-position: 0% 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+    @keyframes blink {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
     }
 }
