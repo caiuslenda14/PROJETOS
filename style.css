@@ -131,9 +131,9 @@ body {
                 background-color: white;
             }
 
-            .spot:hover {
-                color: #1DB954;
-                background-color: black;
+            .steam:hover {
+                color: #fcfcfc;
+                background: linear-gradient(to bottom, #111d2e, #1385b6);
             }
         }
 
@@ -391,7 +391,7 @@ body {
         color: #0077B5;
     }
 
-    .spot:hover {
+    .steam:hover {
         background-color: black;
         color: #1DB954;
     }
