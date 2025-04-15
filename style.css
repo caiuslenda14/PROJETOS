@@ -376,8 +376,8 @@ body {
     }
 
     .git:hover {
-        background-color: black;
         color: white;
+        background-color: black;
     }
 
     .insta:hover {
@@ -391,13 +391,13 @@ body {
     }
 
     .link:hover {
-        background-color: white;
         color: #0077B5;
+        background-color: white;
     }
 
     .steam:hover {
-        background-color: black;
-        color: #1DB954;
+        color: #fcfcfc;
+        background: linear-gradient(to bottom, #111d2e, #1385b6);
     }
 
     .outline {
